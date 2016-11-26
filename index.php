@@ -9,7 +9,7 @@ session_start();
 $pdo = PdoGsb::getPdoGsb();
 $estConnecte = estConnecte();
 
-//On test si la variable $_REQUEST['uc'] est initialisé ou si l'utilisateur est déjà connecté
+//On teste si la variable $_REQUEST['uc'] est initialisé ou si l'utilisateur est déjà connecté
 if(!isset($_REQUEST['uc']) || !$estConnecte){
      $_REQUEST['uc'] = 'connexion';
 }
