@@ -14,7 +14,7 @@
                                     foreach ($lesFraisForfait as $unFrais)
                                     {
 					$idFrais = $unFrais['idfrais'];
-					$libelle = $unFrais[	'libelle'];
+					$libelle = $unFrais['libelle'];
 					$quantite = $unFrais['quantite'];
 				?>
                                 
