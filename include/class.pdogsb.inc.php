@@ -263,7 +263,7 @@ class PdoGsb{
  * @return un tableau associatif de clé un mois -aaaamm- et de valeurs l'année et le mois correspondant 
 */
 	public function getLesMoisDisponibles($idVisiteur){
-		$req = "select FicheFrais.mois as mois from  FicheFrais where FicheFrais.idvisiteur ='$idVisiteur' and FicheFrais.idEtat in ('CR', 'VA')
+		$req = "select FicheFrais.mois as mois from  FicheFrais where FicheFrais.idVisiteur ='$idVisiteur' and FicheFrais.idEtat in ('CR', 'VA')
 		order by FicheFrais.mois desc ";
 		$res = PdoGsb::$monPdo->query($req);
 		$lesMois =array();
