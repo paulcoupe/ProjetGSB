@@ -22,8 +22,7 @@ switch($action){
         
         //Si la variable est égale à 'voirEtatFrais', on appelle les vues 'v_listeMois.php' et 'v_etatFrais.php'
 	case 'voirEtatFrais':{
-            	include("vues/v_listeMois.php");
-                include("vues/v_etatFrais.php");
+
 		$leMois = $_REQUEST['lstMois']; 
 		$lesMois=$pdo->getLesMoisDisponibles($idVisiteur);
 		$moisASelectionner = $leMois;
@@ -37,6 +36,8 @@ switch($action){
 		$nbJustificatifs = $lesInfosFicheFrais['nbJustificatifs'];
 		$dateModif =  $lesInfosFicheFrais['dateModif'];
 		$dateModif =  dateAnglaisVersFrancais($dateModif);
+                include("vues/v_listeMois.php");
+                include("vues/v_etatFrais.php");
 	}
 }
 ?>
