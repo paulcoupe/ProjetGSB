@@ -8,7 +8,7 @@
 		</div>
             
 		<div class="panel-body">
-			<form class="form-horizontal" role="form" method="POST"  action="index.php?uc=gererFrais&action=validerMajFraisForfait">
+			<form class="form-horizontal" role="form" method="post"  action="index.php?uc=gererFrais&action=validerMajFraisForfait">
                             <div class="form-group">
 				<?php
                                     foreach ($lesFraisForfait as $unFrais)
