@@ -1,17 +1,17 @@
 
 <?php
 /*Programme d'actualisation des lignes des tables,  
- cette mise à  jour peut prendre plusieurs minutes...*/
+ cette mise ï¿½ jour peut prendre plusieurs minutes...*/
 include("include/fct.inc.php");
 
-/* Modification des paramètres de connexion */
+/* Modification des paramï¿½tres de connexion */
 
 $serveur='mysql:host=localhost';
-$bdd='dbname=gsbfraisV1.2';   		
-$user='root' ;    		
-$mdp='' ;	
+$bdd='dbname=gsb_frais';   		
+$user='gsb' ;    		
+$mdp='AzertY!59' ;	
 
-/* fin paramètres*/
+/* fin paramï¿½tres*/
 
 $pdo = new PDO($serveur.';'.$bdd, $user, $mdp);
 $pdo->query("SET CHARACTER SET utf8"); 
