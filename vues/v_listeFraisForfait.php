@@ -27,8 +27,9 @@
                                     }
 				?>
                             </div>
-                        </form>   
+                           
                     <input class="btn btn-primary" id="ok" type="submit" value="Valider" size="20" <?php if ($lesInfosFicheFrais['idEtat']!='CR') { echo 'disabled';} ?>/>
+                    </form>
                 </div>
 	</div>
 </div>
