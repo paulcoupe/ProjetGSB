@@ -6,7 +6,7 @@
         
 	<div class="panel-body">
             <h3>Mois à sélectionner : </h3>
-		<form class="form-horizontal" action="index.php?uc=etatFrais&action=voirEtatFrais" method="post">				
+		<form class="form-horizontal" action="index.php?uc=etatFrais&action=selectionnerMois" method="post">				
                     <select class="form-control" id="lstMois" name="lstMois">
                         
 			<?php
