@@ -42,7 +42,7 @@ switch($action){
 		$visiteur = $pdo->getInfosVisiteur($login,$mdp);
                 //Si les informations du visiteurs n'ont pas réussies à être initialisées, on ajoute une erreur et on appelle les vues 'v_erreurs.php' et 'v_connexion.php'
 		if(!is_array( $visiteur)){
-                    ajouterErreur("Login ou mot de passe incorrect");	
+                    ajouterErreur("Login ou mot de passe incorrect");
                     include("vues/v_erreurs.php");
                     include("vues/v_connexion.php");
 		}
@@ -51,7 +51,8 @@ switch($action){
 			$id = $visiteur['id'];
 			$nom =  $visiteur['nom'];
 			$prenom = $visiteur['prenom'];
-			connecter($id,$nom,$prenom);
+                        $libelle = $visiteur['libelle'];
+			connecter($id,$nom,$prenom,$libelle);
                         include("vues/v_sommaire.php");
                 }
 		break;	
