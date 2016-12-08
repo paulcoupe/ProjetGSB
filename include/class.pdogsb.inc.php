@@ -56,8 +56,11 @@ class PdoGsb{
  * @return l'id, le type,le nom et le prénom sous la forme d'un tableau associatif 
 */
 	public function getInfosVisiteur($login, $mdp){
-		$req = "select utilisateur.id as id, utilisateur.nom as nom, utilisateur.prenom as prenom, utilisateur.idtypeutilisateur as idtypeutilisateur from utilisateur 
-		where utilisateur.login='$login' and utilisateur.mdp='$mdp'";
+		$req = "select utilisateur.id as id, utilisateur.nom as nom, utilisateur.prenom as prenom, utilisateur.idtypeutilisateur as idtypeutilisateur , 
+                    typeutilisateur.libelle as libelle                    
+                    from utilisateur 
+                    INNER JOIN typeutilisateur ON typeutilisateur.id = utilisateur.idtypeutilisateur
+                    where utilisateur.login='dandre' and utilisateur.mdp='12e0b9be32932a8028b0ef0432a0a0a99421f745';";
 		$rs = PdoGsb::$monPdo->query($req);
 		$ligne = $rs->fetch();
 		return $ligne;
