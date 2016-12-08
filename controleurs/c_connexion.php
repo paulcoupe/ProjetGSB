@@ -47,11 +47,11 @@ switch($action){
 		}
                 //Sinon, on appelle la vue 'v_sommaire.php' et on connecte le visiteur
 		else { 
-                    	include("vues/v_sommaire.php");
 			$id = $visiteur['id'];
 			$nom =  $visiteur['nom'];
 			$prenom = $visiteur['prenom'];
 			connecter($id,$nom,$prenom);
+                        include("vues/v_sommaire.php");
                 }
 		break;	
 	}
