@@ -38,6 +38,7 @@ switch($action){
 	case 'valideConnexion':{
 		$login = $_REQUEST['login'];
 		$mdp = $_REQUEST['mdp'];
+                $mdp = sha1($mdp);
 		$visiteur = $pdo->getInfosVisiteur($login,$mdp);
                 //Si les informations du visiteurs n'ont pas réussies à être initialisées, on ajoute une erreur et on appelle les vues 'v_erreurs.php' et 'v_connexion.php'
 		if(!is_array( $visiteur)){
