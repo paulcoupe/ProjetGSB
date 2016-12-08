@@ -1,6 +1,6 @@
 ﻿<?php
 
-//On teste la variable $_REQUEST['action'] est initialisée 
+//On teste si la variable $_REQUEST['action'] est initialisée 
 if(!isset($_REQUEST['action'])){
 	$_REQUEST['action'] = 'demandeConnexion';
 }
@@ -37,7 +37,7 @@ switch($action){
         //Si la variable est égale à 'valideConnexion', on récupère les informations du visiteur
 	case 'valideConnexion':{
 		$login = $_REQUEST['login'];
-		$mdp = sha1($_REQUEST['mdp']);
+		$mdp = $_REQUEST['mdp'];
 		$visiteur = $pdo->getInfosVisiteur($login,$mdp);
                 //Si les informations du visiteurs n'ont pas réussies à être initialisées, on ajoute une erreur et on appelle les vues 'v_erreurs.php' et 'v_connexion.php'
 		if(!is_array( $visiteur)){
