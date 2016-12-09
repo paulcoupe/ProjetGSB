@@ -195,4 +195,45 @@ function nbErreurs(){
 	   return count($_REQUEST['erreurs']);
 	}
 }
+
+function getMoisEnLettre($numMois) {
+    $moisEnLettre;
+    if ($numMois ==='01'){
+        $moisEnLettre = 'Janvier';
+    }
+    if ($numMois ==='02'){
+        $moisEnLettre = 'Février';
+    }
+    if ($numMois ==='03'){
+        $moisEnLettre = 'Mars';
+    }
+    if ($numMois ==='04'){
+        $moisEnLettre = 'Avril';
+    }
+    if ($numMois ==='05'){
+        $moisEnLettre = 'Mai';
+    }
+    if ($numMois ==='06'){
+        $moisEnLettre = 'Juin';
+    }
+    if ($numMois ==='07'){
+        $moisEnLettre = 'Juillet';
+    }
+    if ($numMois ==='08'){
+        $moisEnLettre = 'Août';
+    }
+    if ($numMois ==='09'){
+        $moisEnLettre = 'Septembre';
+    }
+    if ($numMois ==='10'){
+        $moisEnLettre = 'Octobre';
+    }
+    if ($numMois ==='11'){
+        $moisEnLettre = 'Novembre';
+    }
+    if ($numMois ==='12'){
+        $moisEnLettre = 'Décembre';
+    }
+    return $moisEnLettre;
+}
 ?>
