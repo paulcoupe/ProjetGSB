@@ -4,7 +4,7 @@
             
 		<div class="panel-heading">
                     
-			<div class="panel-title"><h2>Fiche de frais du mois <?php echo $numMois."-".$numAnnee?> :</h2></div>
+			<div class="panel-title"><h2>Fiche de frais du mois <?php echo $touteLettreMois." ".$numAnnee?> :</h2></div>
                         
 		</div>
             
