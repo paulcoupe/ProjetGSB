@@ -65,6 +65,38 @@ class PdoGsb{
 		$ligne = $rs->fetch();
 		return $ligne;
 	}
+        
+        public function getFraisForfait(){
+            $req = "select * from fraisforfait";
+            $res = PdoGsb::$monPdo->query($req);
+            $lesLignes = $res->fetchAll();
+            return $lesLignes; 
+            
+        }
+        
+        public function createFraisForfait($id,$libelle,$montant){
+            $req = "insert into fraisforfait(id, libelle, montant) values('$id','$libelle',$montant)";
+            PdoGsb::$monPdo->exec($req);
+        }
+        
+        public function deleteFraisForfait($id){
+            $req = "delete from fraisforfait where id ='$id' ";
+            PdoGsb::$monPdo->exec($req);
+           
+        }
+        
+        public function getUnFrais($id){
+            $req = "select * from fraisforfait where id ='$id'";
+            $rs = PdoGsb::$monPdo->query($req);
+            $ligne = $rs->fetch();
+            return $ligne;
+        }
+        
+        public function updateFraisForfait($oldId, $newId, $libelle, $montant){
+		$req = "update fraisforfait set id = '$newId', libelle = '$libelle', montant = $montant 
+		where id = '$oldId'";
+		PdoGsb::$monPdo->exec($req);
+	}
 	
 
 
