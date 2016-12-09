@@ -60,7 +60,7 @@ class PdoGsb{
                     typeutilisateur.libelle as libelle                    
                     from utilisateur 
                     INNER JOIN typeutilisateur ON typeutilisateur.id = utilisateur.idtypeutilisateur
-                    where utilisateur.login='dandre' and utilisateur.mdp='12e0b9be32932a8028b0ef0432a0a0a99421f745';";
+                    where utilisateur.login='$login' and utilisateur.mdp='$mdp';";
 		$rs = PdoGsb::$monPdo->query($req);
 		$ligne = $rs->fetch();
 		return $ligne;
