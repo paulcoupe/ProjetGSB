@@ -31,6 +31,9 @@ switch($uc){
 	case 'etatFrais' :{
 		include("controleurs/c_etatFrais.php");break; 
             }
+        case 'modifierFraisForfait' : {
+                include("controleurs/c_modifierFraisForfait.php");break;
+            }
 	}
 ?>
 
