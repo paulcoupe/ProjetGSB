@@ -236,4 +236,20 @@ function getMoisEnLettre($numMois) {
     }
     return $moisEnLettre;
 }
+
+function valideInfosFraisForfait($id,$libelle,$montant){
+	if($id==""){
+		ajouterErreur("Le champ ID ne doit pas être vide");
+	}
+	if($libelle == ""){
+		ajouterErreur("Le champ libelle ne peut pas être vide");
+	}
+	if($montant == ""){
+		ajouterErreur("Le champ montant ne peut pas être vide");
+	}
+	else
+		if( !is_numeric($montant) ){
+			ajouterErreur("Le champ montant doit être numérique");
+		}
+}
 ?>
