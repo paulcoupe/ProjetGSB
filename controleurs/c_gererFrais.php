@@ -6,17 +6,28 @@ $mois = getMois(date("d/m/Y"));
 $numAnnee =substr( $mois,0,4);
 $numMois =substr( $mois,4,2);
 $action = $_REQUEST['action'];
+$lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVisiteur,$mois);
+$lesFraisForfait= $pdo->getLesFraisForfait($idVisiteur,$mois);
+$lesInfosFicheFrais = $pdo->getLesInfosFicheFrais($idVisiteur,$mois);
+
 
 //En fonction de la variable $action, on effectue l'un des cas suivants
 switch($action){
     
         //Si la variable est égale à 'saisiFrais', on vérifie si c'est le premier frais du mois, et si oui, on crée une nouvelle ligne de frais
-	case 'saisirFrais':{
+	case 'saisirFraisForfaitise':{
+            include("vues/v_listeFraisForfait.php");
             if($pdo->estPremierFraisMois($idVisiteur,$mois)){
                 $pdo->creeNouvellesLignesFrais($idVisiteur,$mois);
             }
             break;
 	}
+        
+        case 'saisirFraisHorsForfait' :{
+            include("vues/v_listeFraisHorsForfait.php");
+            break;  
+        }
+        
         
         //Si la variable est égale à 'validerMajFraisForfait', on exécute ce cas
 	case 'validerMajFraisForfait':{
@@ -30,7 +41,7 @@ switch($action){
 			ajouterErreur("Les valeurs des frais doivent �tre num�riques");
 			include("vues/v_erreurs.php");
 		}
-	  break;
+                break;
 	}
         
         //Si la variable est égale à 'validerCreationFrais', on recueille les informations du frais
@@ -57,10 +68,3 @@ switch($action){
 		break;
 	}
 }
-
-$lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVisiteur,$mois);
-$lesFraisForfait= $pdo->getLesFraisForfait($idVisiteur,$mois);
-$lesInfosFicheFrais = $pdo->getLesInfosFicheFrais($idVisiteur,$mois);
-
-include("vues/v_listeFraisForfait.php");
-include("vues/v_listeFraisHorsForfait.php");
