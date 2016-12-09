@@ -40,7 +40,8 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.php?uc=gererFrais&action=saisirFraisForfaitise">Saisir mes fiches de frais forfaitisé</a></li>
         <li class="active"><a href="index.php?uc=gererFrais&action=saisirFraisHorsForfait">Saisir mes fiches de frais hors forfait</a></li>
-        <li class="active"><a href="index.php?uc=etatFrais&action=selectionnerMois">Mes fiches de frais</a></li>      
+        <li class="active"><a href="index.php?uc=etatFrais&action=selectionnerMois">Mes fiches de frais</a></li>    
+        <li class="active"><a href="index.php?uc=modifierFraisForfait&action=default">Modifier Frais Forfait</a></li>  
       </ul>
       <ul class="nav navbar-nav navbar-right">
 		  <li><a><?php echo $_SESSION['prenom']."  ".$_SESSION['nom']?></a></li>
