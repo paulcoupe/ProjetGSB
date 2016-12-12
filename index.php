@@ -17,7 +17,8 @@ if(!isset($_REQUEST['uc']) || !$estConnecte){
 $uc = $_REQUEST['uc'];
 
 //En fonction de la variable $uc, on exécute l'un des cas suivants
-switch($uc){  
+if($pdo->get_maintenance() === FALSE){
+        switch($uc){  
         
         //Si la variable est égale à 'connexion', on appelle le contrôleur 'c_connexion.php'
 	case 'connexion':{
@@ -35,6 +36,11 @@ switch($uc){
                 include("controleurs/c_modifierFraisForfait.php");break;
             }
 	}
+}
+
+else {
+    echo "<h1> Ce site est en cours de maintenance. </h1>";
+}
 ?>
 
 

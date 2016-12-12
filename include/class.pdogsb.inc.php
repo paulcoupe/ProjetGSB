@@ -23,6 +23,11 @@ class PdoGsb{
       	private static $mdp='AzertY!59' ;	
 		private static $monPdo;
 		private static $monPdoGsb=null;
+        private static $maintenance = false;
+        
+        public function get_maintenance(){
+            return PdoGsb::$maintenance;
+        }
 		
 /**
  * Constructeur privé, crée l'instance de PDO qui sera sollicitée
