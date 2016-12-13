@@ -9,7 +9,11 @@ $action = $_REQUEST['action'];
 
 //En fonction de la variable $action, on effectue l'un des cas suivants
 switch($action){
-    
+        case 'oubliMdp':{
+            include('vues/v_oubliMdp.php');
+            
+            break;
+        }
         //Si la variable est égale à 'ajotuerVisiteur', on appelle la vue 'v_redirection.php', on récupère les informations demandeés, et on ajouter un visiteur à la base de données
 	case 'ajouterVisiteur':{
             include('vues/v_redirection.php');

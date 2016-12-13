@@ -35,8 +35,8 @@ if($pdo->get_maintenance() === FALSE){
         case 'modifierFraisForfait' : {
                 include("controleurs/c_modifierFraisForfait.php");break;
             }
-	}
-}
+        
+}}
 
 else {
     echo "<h1> Ce site est en cours de maintenance. </h1>
@@ -45,7 +45,7 @@ Ce site a été désactivé car il est en cours de maintenance, il sera rétabli
 Nous nous excusons pour le désagrément encouru et vous prions de bien vouloir revenir nous voir un peu plus tard.
 Merci de votre compréhension. »  
 ";
-}
+       }
 ?>
 
 
